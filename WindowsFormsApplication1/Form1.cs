@@ -16,12 +16,9 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
 
-            bb1.Leave += ValidateNumeric;
-            bb2.Leave += ValidateNumeric;
-            bb2.Leave += ValidateNumeric;
-            sb1.Leave += ValidateNumeric;
-            sb2.Leave += ValidateNumeric;
-            sb3.Leave += ValidateNumeric;
+            bb1.Leave += ValidateBlind;
+            bb2.Leave += ValidateBlind;
+            bb2.Leave += ValidateBlind;
             t1.Leave += ValidateNumeric;
             t1.Leave += ValidateNumeric;
             t1.Leave += ValidateNumeric;
@@ -35,21 +32,29 @@ namespace WindowsFormsApplication1
             if (!textBox.Text.IsNumericOrEmpty()) textBox.Focus();
         }
 
+        private void ValidateBlind(object sender, EventArgs e)
+        {
+            var textBox = sender as TextBox;
+            if (textBox == null) return; // guard
+            textBox.ForeColor = textBox.Text.IsBlind() ? Color.Black : Color.Red;
+            if (!textBox.Text.IsBlind()) textBox.Focus();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             ProgramSettings.BlindLevels = new List<BlindLevel>();
 
-            if (bb1.Text.IsNumeric() && sb1.Text.IsNumeric() && t1.Text.IsNumeric())
+            if (bb1.Text.IsBlind() && t1.Text.IsNumeric())
                 ProgramSettings.BlindLevels.Add(
-                    new BlindLevel(int.Parse(bb1.Text), int.Parse(bb1.Text), int.Parse(t1.Text)));
+                    new BlindLevel(bb1.Text.GetBB(), bb1.Text.GetSB(), int.Parse(t1.Text)));
 
-            if (bb2.Text.IsNumeric() && sb2.Text.IsNumeric() && t2.Text.IsNumeric())
+            if (bb2.Text.IsBlind() && t2.Text.IsNumeric())
                 ProgramSettings.BlindLevels.Add(
-                    new BlindLevel(int.Parse(bb2.Text), int.Parse(bb2.Text), int.Parse(t2.Text)));
+                    new BlindLevel(bb2.Text.GetBB(), bb2.Text.GetSB(), int.Parse(t2.Text)));
 
-            if (bb3.Text.IsNumeric() && sb3.Text.IsNumeric() && t3.Text.IsNumeric())
+            if (bb3.Text.IsBlind() && t3.Text.IsNumeric())
                 ProgramSettings.BlindLevels.Add(
-                    new BlindLevel(int.Parse(bb3.Text), int.Parse(bb3.Text), int.Parse(t3.Text)));
+                    new BlindLevel(bb2.Text.GetBB(), bb2.Text.GetSB(), int.Parse(t3.Text)));
 
             // vi injektar timern i konstruktorn för Form2 för att slippa
             // dubbla uppräkningar om man öppnar flera formulär

@@ -35,10 +35,6 @@
             this.bb2 = new System.Windows.Forms.TextBox();
             this.bb3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.sb1 = new System.Windows.Forms.TextBox();
-            this.sb2 = new System.Windows.Forms.TextBox();
-            this.sb3 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.t3 = new System.Windows.Forms.TextBox();
             this.t2 = new System.Windows.Forms.TextBox();
@@ -99,44 +95,14 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(81, 24);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(21, 13);
+            this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 6;
-            this.label4.Text = "BB";
-            // 
-            // sb1
-            // 
-            this.sb1.Location = new System.Drawing.Point(131, 43);
-            this.sb1.Name = "sb1";
-            this.sb1.Size = new System.Drawing.Size(44, 20);
-            this.sb1.TabIndex = 7;
-            // 
-            // sb2
-            // 
-            this.sb2.Location = new System.Drawing.Point(131, 67);
-            this.sb2.Name = "sb2";
-            this.sb2.Size = new System.Drawing.Size(44, 20);
-            this.sb2.TabIndex = 8;
-            // 
-            // sb3
-            // 
-            this.sb3.Location = new System.Drawing.Point(131, 90);
-            this.sb3.Name = "sb3";
-            this.sb3.Size = new System.Drawing.Size(44, 20);
-            this.sb3.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(131, 23);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(21, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "SB";
+            this.label4.Text = "Blinds";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(181, 23);
+            this.label6.Location = new System.Drawing.Point(131, 24);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(30, 13);
             this.label6.TabIndex = 14;
@@ -144,28 +110,28 @@
             // 
             // t3
             // 
-            this.t3.Location = new System.Drawing.Point(181, 90);
+            this.t3.Location = new System.Drawing.Point(131, 91);
             this.t3.Name = "t3";
             this.t3.Size = new System.Drawing.Size(44, 20);
             this.t3.TabIndex = 13;
             // 
             // t2
             // 
-            this.t2.Location = new System.Drawing.Point(181, 67);
+            this.t2.Location = new System.Drawing.Point(131, 68);
             this.t2.Name = "t2";
             this.t2.Size = new System.Drawing.Size(44, 20);
             this.t2.TabIndex = 12;
             // 
             // t1
             // 
-            this.t1.Location = new System.Drawing.Point(181, 43);
+            this.t1.Location = new System.Drawing.Point(131, 44);
             this.t1.Name = "t1";
             this.t1.Size = new System.Drawing.Size(44, 20);
             this.t1.TabIndex = 11;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(149, 117);
+            this.button1.Location = new System.Drawing.Point(100, 117);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 15;
@@ -183,10 +149,6 @@
             this.Controls.Add(this.t3);
             this.Controls.Add(this.t2);
             this.Controls.Add(this.t1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.sb3);
-            this.Controls.Add(this.sb2);
-            this.Controls.Add(this.sb1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.bb3);
             this.Controls.Add(this.bb2);
@@ -210,10 +172,6 @@
         private System.Windows.Forms.TextBox bb2;
         private System.Windows.Forms.TextBox bb3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox sb1;
-        private System.Windows.Forms.TextBox sb2;
-        private System.Windows.Forms.TextBox sb3;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox t3;
         private System.Windows.Forms.TextBox t2;
