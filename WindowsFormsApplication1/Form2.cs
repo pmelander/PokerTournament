@@ -30,14 +30,18 @@ namespace WindowsFormsApplication1
 
         private void _timer_Tick(object sender, EventArgs e)
         {
-            if (_listIndex > ProgramSettings.BlindLevels.Count) _timer.Stop(); // guard
+            if (_listIndex >= ProgramSettings.BlindLevels.Count)
+            {
+                _timer.Stop(); // guard
+                return;
+            }
             ProgramSettings.BlindLevels[_listIndex].TimeInSeconds -= 1; // ticka ner en sekund
             
             // uppdatera UI
             var t = TimeSpan.FromSeconds(ProgramSettings.BlindLevels[_listIndex].TimeInSeconds);
             currentBlind.Text = $"Current BB: {ProgramSettings.BlindLevels[_listIndex].BB}";
 
-            nextBlind.Text = _listIndex + 1 <= ProgramSettings.BlindLevels.Count
+            nextBlind.Text = _listIndex + 1 < ProgramSettings.BlindLevels.Count
                 ? $"Next BB: {ProgramSettings.BlindLevels[_listIndex + 1].BB}"
                 : $"Last blind";
 
